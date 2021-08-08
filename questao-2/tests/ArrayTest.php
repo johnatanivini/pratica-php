@@ -23,7 +23,7 @@ class ArrayTest extends TestCase
         $array = [];
 
         $this->assertIsArray($array);
-        
+
     }
    
     public function testCrieUmArrayComSeteNumeros()
