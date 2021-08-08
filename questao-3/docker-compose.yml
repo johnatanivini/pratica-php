@@ -9,11 +9,11 @@ services:
     environment: 
       MYSQL_ROOT_PASSWORD: teste
     ports: 
-      - 1002:3306
+      - 1003:3306
   adminer:
     image: adminer
     restart: always
     ports:
-      - 1001:8080
+      - 1003:8080
 volumes: 
   questao-3-mysql:

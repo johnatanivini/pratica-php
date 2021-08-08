@@ -1,0 +1,36 @@
+version: '3'
+services: 
+  questao-1-app:
+    build: .
+    volumes: 
+      - ./:/app
+    ports: 
+      - 1012:80
+    networks: 
+      - teste_web
+    depends_on: 
+      - questao-1-mysql
+  questao-1-mysql:
+    image: mariadb
+    container_name: questao-1-mysql
+    volumes: 
+      - questao-1-mysql:/var/lib/mysql
+      - ./:/temp
+    environment: 
+      MYSQL_ROOT_PASSWORD: teste
+      MYSQL_DATABASE_NAME: teste
+    networks: 
+      - teste_web
+    ports: 
+      - 1013:3306
+  adminer:
+    image: adminer
+    restart: always
+    networks: 
+      - teste_web
+    ports:
+      - 1014:8080
+networks:
+    teste_web:
+volumes: 
+  questao-1-mysql:
