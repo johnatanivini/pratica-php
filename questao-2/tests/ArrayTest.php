@@ -16,16 +16,24 @@ class ArrayTest extends TestCase
     {
         var_dump($objeto);
     }
-
+    /**
+     * 1 - Crie um Array
+     *
+     * @return void
+     */
     public function testCrieUmArray()
     {
         
         $array = [];
 
         $this->assertIsArray($array);
-
     }
-   
+    
+    /**
+     * 2 - Popule este array com 7 numeros
+     *
+     * @return void
+     */
     public function testCrieUmArrayComSeteNumeros()
     {
         
@@ -37,6 +45,7 @@ class ArrayTest extends TestCase
     }
     
     /**
+    * 3 - Imprima o número da posição 3 do array 
     * @depends testCrieUmArrayComSeteNumeros
     */
     public function testImprimaUmNumeroComAPosicaoTres($array)
@@ -45,6 +54,8 @@ class ArrayTest extends TestCase
     }
 
     /**
+    *  4 - Crie uma variável com todas as posições do array no formato de string separado por
+    *  vírgula
     * @depends testCrieUmArrayComSeteNumeros
     */
     public function testCrieUmaVariavelComAsPosicoesSeparadosPorVirgula($array)
@@ -56,6 +67,8 @@ class ArrayTest extends TestCase
         return $stringJoin;
     }
     /**
+    * 5 - Crie um novo array a partir da variável no formato de string que foi criada e destrua array anterior
+    * 
     * @depends testCrieUmArrayComSeteNumeros
     * @depends testCrieUmaVariavelComAsPosicoesSeparadosPorVirgula
     */
@@ -72,6 +85,7 @@ class ArrayTest extends TestCase
 
     
     /**
+    * 6 - Crie uma condição para verificar se existe o valor 14 no array
     * @depends testCrieUmArrayComSeteNumeros
     */
     public function testExisteOValor14noArray($array)
@@ -86,6 +100,9 @@ class ArrayTest extends TestCase
     }
 
     /**
+     * 7 - Faça uma busca em cada posição. Se o número da posição atual for menor que o
+    * da posição anterior (valor anterior que não foi excluído do array ainda), exclua esta
+    * posição
     * @depends testCrieUmArrayComSeteNumeros
     **/
     public function testRemoveDoArrayAPosicaoAtualSeForMenorQueAAnterior($array)
@@ -94,6 +111,7 @@ class ArrayTest extends TestCase
     }
 
     /**
+    * 8 - Remova a última posição deste array
     * @depends testCrieUmArrayComSeteNumeros
     **/
     public function testRemovaAUltimaPosicaoDesteArray($array)
@@ -106,6 +124,7 @@ class ArrayTest extends TestCase
     }
 
     /**
+    * 9 - Conte quantos elementos tem neste array
     * @depends testCrieUmArrayComSeteNumeros
     **/
     public function testConteQuantosElementosTemNesteArray($array)
@@ -127,6 +146,7 @@ class ArrayTest extends TestCase
     }
 
     /**
+    * 10 -  Inverta as posições deste array
     * @depends testCrieUmArrayComSeteNumeros
     **/
     public function testInvertaAsPosicoesDesteArray($array)
