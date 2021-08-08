@@ -1,0 +1,19 @@
+version: '3'
+services: 
+  questao-3:
+    image: mariadb
+    container_name: questao-3
+    volumes: 
+      - questao-3-mysql:/var/lib/mysql
+      - ./:/temp
+    environment: 
+      MYSQL_ROOT_PASSWORD: teste
+    ports: 
+      - 1002:3306
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 1001:8080
+volumes: 
+  questao-3-mysql:
